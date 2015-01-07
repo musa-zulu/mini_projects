@@ -4,7 +4,7 @@ namespace DrivingSchoolMVCApp.Models
 {
     public class Course
     {
-        public int CorseID { get; set; }
+        public int CourseID { get; set; }
         public string Title { get; set; }
         public int Credits { get; set; }
 

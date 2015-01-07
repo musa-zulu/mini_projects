@@ -8,6 +8,7 @@ F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpe
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpenAuth.OpenId.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.dll
+F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.SqlServer.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\Microsoft.Web.Infrastructure.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\Microsoft.Web.WebPages.OAuth.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\Newtonsoft.Json.dll
@@ -25,6 +26,7 @@ F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\WebGrease
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\WebMatrix.Data.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\WebMatrix.WebData.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.xml
+F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.SqlServer.xml
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\Newtonsoft.Json.xml
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\System.Net.Http.Formatting.xml
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\System.Web.Helpers.xml
@@ -44,8 +46,5 @@ F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpe
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpenAuth.OAuth.xml
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpenAuth.OpenId.xml
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.csprojResolveAssemblyReference.cache
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.pdb
-F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.SqlServer.dll
-F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.SqlServer.xml
