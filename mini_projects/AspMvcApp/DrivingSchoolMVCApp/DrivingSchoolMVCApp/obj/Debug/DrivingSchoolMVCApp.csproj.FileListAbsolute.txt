@@ -47,3 +47,5 @@ F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\DotNetOpe
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.csprojResolveAssemblyReference.cache
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.dll
 F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.pdb
+F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.SqlServer.dll
+F:\mini_projects\AspMvcApp\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\EntityFramework.SqlServer.xml

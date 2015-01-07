@@ -10,7 +10,7 @@ namespace DrivingSchoolMVCApp.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Welcome To Driving School Asp.Net MVC App";
 
             return View();
         }
