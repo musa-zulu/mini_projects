@@ -47,3 +47,5 @@ F:\mini_projects\AspMvcApp\MvcApplication\MvcApplication\bin\DotNetOpenAuth.Open
 F:\mini_projects\AspMvcApp\MvcApplication\MvcApplication\obj\Debug\MvcApplication.csprojResolveAssemblyReference.cache
 F:\mini_projects\AspMvcApp\MvcApplication\MvcApplication\obj\Debug\MvcApplication.dll
 F:\mini_projects\AspMvcApp\MvcApplication\MvcApplication\obj\Debug\MvcApplication.pdb
+F:\mini_projects\AspMvcApp\MvcApplication\MvcApplication\bin\EntityFramework.SqlServer.dll
+F:\mini_projects\AspMvcApp\MvcApplication\MvcApplication\bin\EntityFramework.SqlServer.xml
