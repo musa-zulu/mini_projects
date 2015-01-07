@@ -1,0 +1,4 @@
+F:\mini_projects\MiniProjectJavaScript\MiniProjectJavaScript\bin\MiniProjectJavaScript.dll
+F:\mini_projects\MiniProjectJavaScript\MiniProjectJavaScript\bin\MiniProjectJavaScript.pdb
+F:\mini_projects\MiniProjectJavaScript\MiniProjectJavaScript\obj\Debug\MiniProjectJavaScript.dll
+F:\mini_projects\MiniProjectJavaScript\MiniProjectJavaScript\obj\Debug\MiniProjectJavaScript.pdb
