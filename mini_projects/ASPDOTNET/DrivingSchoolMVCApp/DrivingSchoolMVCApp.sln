@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrivingSchoolMVCApp", "DrivingSchoolMVCApp\DrivingSchoolMVCApp.csproj", "{5894E8C9-AF10-4477-B2C5-50B4428A1942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrivingSchoolMVCApp.Tests", "DrivingSchoolMVCApp.Tests\DrivingSchoolMVCApp.Tests.csproj", "{C1A068B7-AABC-47F8-A11C-A4D7300E7904}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5894E8C9-AF10-4477-B2C5-50B4428A1942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5894E8C9-AF10-4477-B2C5-50B4428A1942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5894E8C9-AF10-4477-B2C5-50B4428A1942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5894E8C9-AF10-4477-B2C5-50B4428A1942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A068B7-AABC-47F8-A11C-A4D7300E7904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A068B7-AABC-47F8-A11C-A4D7300E7904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A068B7-AABC-47F8-A11C-A4D7300E7904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A068B7-AABC-47F8-A11C-A4D7300E7904}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
