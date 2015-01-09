@@ -52,3 +52,4 @@ F:\mini_projects\ASPDOTNET\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\Microsoft
 F:\mini_projects\ASPDOTNET\DrivingSchoolMVCApp\DrivingSchoolMVCApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\mini_projects\ASPDOTNET\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.dll
 F:\mini_projects\ASPDOTNET\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.pdb
+F:\mini_projects\ASPDOTNET\DrivingSchoolMVCApp\DrivingSchoolMVCApp\obj\Debug\DrivingSchoolMVCApp.csprojResolveAssemblyReference.cache
