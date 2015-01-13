@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MeetingTracker.Models.MeetingItemStatus>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Meeting.MeetingDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingItem.MeetingItemDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActionRequired)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meeting.MeetingDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingItem.MeetingItemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionRequired)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeetingItemStatusId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MeetingItemStatusId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeetingItemStatusId })
+        </td>
+    </tr>
+}
+
+</table>

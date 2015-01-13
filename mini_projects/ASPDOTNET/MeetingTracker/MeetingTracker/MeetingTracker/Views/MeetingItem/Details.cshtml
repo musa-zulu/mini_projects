@@ -1,0 +1,58 @@
+﻿@model MeetingTracker.Models.MeetingItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MeetingItem</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingItemDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingItemDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentageCompleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentageCompleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MeetingItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
