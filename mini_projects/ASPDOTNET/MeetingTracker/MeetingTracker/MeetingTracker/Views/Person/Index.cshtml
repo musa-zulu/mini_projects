@@ -4,29 +4,29 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Responsible People</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Person", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
+<table class="webgrid-table">
+    <tr class="webgrid-row-style">
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.LastName)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.Address)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.Phone)
         </th>
-        <th></th>
+        <th class="webgrid-header">Action</th>
     </tr>
 
 @foreach (var item in Model) {

@@ -15,6 +15,12 @@ select,
 textarea {
     max-width: 280px;
 }
+/*
+    this centers all the h2's'
+    */
+h2 {
+    text-align: center;
+}
 
 /* styles for validation helpers */
 .field-validation-error {

@@ -17,5 +17,8 @@ namespace MeetingTracker.Models
 
         public ICollection<MeetingItemStatus> MeetingItemStatuses { get; set; }
 
+
+ 
+
     }
 }

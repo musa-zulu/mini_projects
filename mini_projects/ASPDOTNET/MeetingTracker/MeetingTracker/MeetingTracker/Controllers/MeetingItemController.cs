@@ -46,7 +46,7 @@ namespace MeetingTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="MeetingItemId,MeetingItemDescription,StartDate,DueDate,Priority,PercentageCompleted")] MeetingItem meetingitem)
+        public ActionResult Create([Bind(Include="MeetingItemId,MeetingItemDescription,Priority,PercentageCompleted,Duration")] MeetingItem meetingitem)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace MeetingTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="MeetingItemId,MeetingItemDescription,StartDate,DueDate,Priority,PercentageCompleted")] MeetingItem meetingitem)
+        public ActionResult Edit([Bind(Include="MeetingItemId,MeetingItemDescription,Priority,PercentageCompleted,Duration")] MeetingItem meetingitem)
         {
             if (ModelState.IsValid)
             {

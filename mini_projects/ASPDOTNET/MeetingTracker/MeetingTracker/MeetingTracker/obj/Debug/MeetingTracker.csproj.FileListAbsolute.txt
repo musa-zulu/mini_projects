@@ -52,3 +52,4 @@ F:\mini_projects\ASPDOTNET\MeetingTracker\MeetingTracker\MeetingTracker\bin\Micr
 F:\mini_projects\ASPDOTNET\MeetingTracker\MeetingTracker\MeetingTracker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\mini_projects\ASPDOTNET\MeetingTracker\MeetingTracker\MeetingTracker\obj\Debug\MeetingTracker.dll
 F:\mini_projects\ASPDOTNET\MeetingTracker\MeetingTracker\MeetingTracker\obj\Debug\MeetingTracker.pdb
+F:\mini_projects\ASPDOTNET\MeetingTracker\MeetingTracker\MeetingTracker\obj\Debug\MeetingTracker.csprojResolveAssemblyReference.cache

@@ -1,32 +1,36 @@
-﻿@model IEnumerable<MeetingTracker.Models.MeetingItemStatus>
+﻿@using System.Web.Mvc.Html
+@model IEnumerable<MeetingTracker.Models.MeetingItemStatus>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Meeting Minutes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Update Meeting Item", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.Meeting.MeetingDescription)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.MeetingItem.MeetingItemDescription)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Person.FirstName)
+        <th class="webgrid-header">
+            Responsible Person
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.CurrentStatus)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.ActionRequired)
         </th>
-        <th></th>
+        <th class="webgrid-header">
+            @Html.DisplayNameFor(model => model.DateUpdated)
+        </th>
+        <th class="webgrid-header">Action</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -45,6 +49,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActionRequired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateUpdated)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MeetingItemStatusId }) |

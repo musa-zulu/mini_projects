@@ -4,32 +4,33 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Meetings</h2>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
+
+    <a class="btn btn-primary btn-large" @Html.ActionLink("Capture New Meeting", "Create") />   </p>
+<table class="webgrid-table">
+    <tr class="webgrid-row-style">
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.MeetingType.MeetingTypeDescription)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.MeetingDescription)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.MeetingDate)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.StartTime)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.EndTime)
         </th>
-        <th>
+        <th class="webgrid-header">
             @Html.DisplayNameFor(model => model.Location)
         </th>
-        <th></th>
+        <th class="webgrid-header">Action</th>
     </tr>
 
 @foreach (var item in Model) {

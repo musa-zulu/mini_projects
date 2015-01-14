@@ -13,11 +13,15 @@ namespace MeetingTracker.Models
             {
                 new MeetingType
                 {
-                    MeetingTypeDescription = "Type One",
+                    MeetingTypeDescription = "MANCO",
                 },
                    new MeetingType
                 {
-                    MeetingTypeDescription = "Type Two",
+                    MeetingTypeDescription = "Finance",
+                },
+                new MeetingType
+                {
+                    MeetingTypeDescription = "Project Team Leaders",
                 }
             };
 
@@ -58,19 +62,22 @@ namespace MeetingTracker.Models
                 new MeetingItem
                 {
                     MeetingItemDescription = "Meeting Description",
-                    StartDate = DateTime.Parse("2015-01-02"),
-                    DueDate = DateTime.Parse("2015-02-02"),
+                   
+                   // DueDate = DateTime.Parse("2015-02-02"),
                     Priority = "High",
-                    PercentageCompleted = "15%"
+                    PercentageCompleted = "15%",
+                     Duration = "One Month"
                 },
 
                 new MeetingItem
                 {
                     MeetingItemDescription = "Meeting Description one",
-                    StartDate = DateTime.Parse("2015-02-02"),
-                    DueDate = DateTime.Parse("2015-03-02"),
+                   // StartDate = DateTime.Parse("2015-02-02"),
+                   // DueDate = DateTime.Parse("2015-03-02"),
+                   
                     Priority = "High",
-                    PercentageCompleted = "15%"
+                    PercentageCompleted = "25%",
+                    Duration = "One Month"
                 }
             };
 

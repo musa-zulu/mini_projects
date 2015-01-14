@@ -26,22 +26,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.StartDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate)
-                @Html.ValidationMessageFor(model => model.StartDate)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DueDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DueDate)
-                @Html.ValidationMessageFor(model => model.DueDate)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Priority, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Priority)
@@ -54,6 +38,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PercentageCompleted)
                 @Html.ValidationMessageFor(model => model.PercentageCompleted)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Duration, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Duration)
+                @Html.ValidationMessageFor(model => model.Duration)
             </div>
         </div>
 

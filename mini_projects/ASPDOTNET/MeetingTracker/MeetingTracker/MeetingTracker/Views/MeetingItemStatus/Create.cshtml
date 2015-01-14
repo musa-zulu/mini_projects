@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Update Meeting Item</h2>
 
 
 @using (Html.BeginForm()) 
@@ -17,7 +17,8 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PersonId, "PersonId", new { @class = "control-label col-md-2" })
+            <!--PersonId-->
+            @Html.LabelFor(model => model.PersonId, "Responsible Person", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("PersonId", String.Empty)
                 @Html.ValidationMessageFor(model => model.PersonId)
@@ -25,7 +26,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MeetingId, "MeetingId", new { @class = "control-label col-md-2" })
+            <!--MeetingId-->
+            @Html.LabelFor(model => model.MeetingId, "Meeting", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("MeetingId", String.Empty)
                 @Html.ValidationMessageFor(model => model.MeetingId)
@@ -33,7 +35,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MeetingItemId, "MeetingItemId", new { @class = "control-label col-md-2" })
+            <!--MeetingItemId-->
+            @Html.LabelFor(model => model.MeetingItemId, "Meeting Item", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("MeetingItemId", String.Empty)
                 @Html.ValidationMessageFor(model => model.MeetingItemId)
@@ -53,6 +56,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ActionRequired)
                 @Html.ValidationMessageFor(model => model.ActionRequired)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateUpdated, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateUpdated)
+                @Html.ValidationMessageFor(model => model.DateUpdated)
             </div>
         </div>
 

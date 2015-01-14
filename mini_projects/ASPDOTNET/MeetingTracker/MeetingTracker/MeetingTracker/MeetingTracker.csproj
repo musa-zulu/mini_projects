@@ -182,6 +182,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\GridLayout.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -225,6 +226,16 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Meeting\Create.cshtml" />
+    <Content Include="Views\Meeting\Delete.cshtml" />
+    <Content Include="Views\Meeting\Details.cshtml" />
+    <Content Include="Views\Meeting\Edit.cshtml" />
+    <Content Include="Views\Meeting\Index.cshtml" />
+    <Content Include="Views\MeetingItem\Create.cshtml" />
+    <Content Include="Views\MeetingItem\Delete.cshtml" />
+    <Content Include="Views\MeetingItem\Details.cshtml" />
+    <Content Include="Views\MeetingItem\Edit.cshtml" />
+    <Content Include="Views\MeetingItem\Index.cshtml" />
     <Content Include="Views\MeetingItemStatus\Create.cshtml" />
     <Content Include="Views\MeetingItemStatus\Delete.cshtml" />
     <Content Include="Views\MeetingItemStatus\Details.cshtml" />
@@ -235,16 +246,7 @@
     <Content Include="Views\Person\Details.cshtml" />
     <Content Include="Views\Person\Edit.cshtml" />
     <Content Include="Views\Person\Index.cshtml" />
-    <Content Include="Views\MeetingItem\Create.cshtml" />
-    <Content Include="Views\MeetingItem\Delete.cshtml" />
-    <Content Include="Views\MeetingItem\Details.cshtml" />
-    <Content Include="Views\MeetingItem\Edit.cshtml" />
-    <Content Include="Views\MeetingItem\Index.cshtml" />
-    <Content Include="Views\Meeting\Create.cshtml" />
-    <Content Include="Views\Meeting\Delete.cshtml" />
-    <Content Include="Views\Meeting\Details.cshtml" />
-    <Content Include="Views\Meeting\Edit.cshtml" />
-    <Content Include="Views\Meeting\Index.cshtml" />
+    <Content Include="Views\MeetingItemStatus\Details - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

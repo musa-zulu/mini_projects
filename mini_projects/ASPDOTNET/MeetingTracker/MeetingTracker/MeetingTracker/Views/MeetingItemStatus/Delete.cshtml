@@ -11,31 +11,7 @@
     <h4>MeetingItemStatus</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Meeting.MeetingDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Meeting.MeetingDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MeetingItem.MeetingItemDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MeetingItem.MeetingItemDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Person.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Person.FirstName)
-        </dd>
-
-        <dt>
+       <dt>
             @Html.DisplayNameFor(model => model.CurrentStatus)
         </dt>
 
@@ -49,6 +25,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.ActionRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateUpdated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateUpdated)
         </dd>
 
     </dl>
