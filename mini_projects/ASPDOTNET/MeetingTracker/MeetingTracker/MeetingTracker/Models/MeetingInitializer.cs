@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using MeetingTracker.Context;
 
 namespace MeetingTracker.Models
 {
 
-    public class MeetingInitializer : DropCreateDatabaseIfModelChanges<MeetingContext>
+    public class MeetingInitializer : DropCreateDatabaseAlways<MeetingContext>
     {
         protected override void Seed(MeetingContext context)
         {
@@ -31,61 +32,6 @@ namespace MeetingTracker.Models
             }
             context.SaveChanges();
 
-            var meetings = new List<Meeting>()
-            {
-                new Meeting
-                {
-                    MeetingDescription = "New Meeting one",
-                    MeetingDate = DateTime.Parse("2015-01-02"),
-                    StartTime = DateTime.Parse("08:21 AM"),
-                    EndTime = DateTime.Parse("10:21 AM"),
-                    Location = "Chillisoft Offices"
-                },
-                new Meeting 
-                {
-                    MeetingDescription = "New Meeting one",
-                    MeetingDate = DateTime.Parse("2015-01-02"),
-                    StartTime = DateTime.Parse("08:21 AM"),
-                    EndTime = DateTime.Parse("10:21 AM"),
-                    Location = "Chillisoft Offices"
-                }
-            };
-            foreach (var m in meetings)
-            {
-                context.Meetings.Add(m);
-            }
-            context.SaveChanges();
-
-
-            var meetingItems = new List<MeetingItem>()
-            {
-                new MeetingItem
-                {
-                    MeetingItemDescription = "Meeting Description",
-                   
-                   // DueDate = DateTime.Parse("2015-02-02"),
-                    Priority = "High",
-                    PercentageCompleted = "15%",
-                     Duration = "One Month"
-                },
-
-                new MeetingItem
-                {
-                    MeetingItemDescription = "Meeting Description one",
-                   // StartDate = DateTime.Parse("2015-02-02"),
-                   // DueDate = DateTime.Parse("2015-03-02"),
-                   
-                    Priority = "High",
-                    PercentageCompleted = "25%",
-                    Duration = "One Month"
-                }
-            };
-
-            foreach (var meetingItem in meetingItems)
-            {
-                context.MeetingItems.Add(meetingItem);
-            }
-            context.SaveChanges();
 
             var persons = new List<Person>()
             {
@@ -95,6 +41,7 @@ namespace MeetingTracker.Models
                     LastName = "Zulu",
                     Email = "musa@chillisoft.co.za",
                     Address = "some address",
+                    
                 },
                      new Person
                 {
@@ -111,20 +58,90 @@ namespace MeetingTracker.Models
             }
             context.SaveChanges();
 
+
+            var meetingItems = new List<MeetingItem>()
+            {
+                new MeetingItem
+                {
+                    MeetingItemDescription = "Meeting Description",
+                   
+                   // DueDate = DateTime.Now,
+                    Priority = "High",
+                    PercentageCompleted = "15%",
+                     DueDate = DateTime.Parse("2011-03-21"),
+                     PersonId = 1,
+                     MeetingItemId = 1
+                },
+
+                new MeetingItem
+                {
+                    MeetingItemDescription = "Meeting Description one",
+                   // StartDate = DateTime.Now,
+                   // DueDate = DateTime.Now,
+                   
+                    Priority = "High",
+                    PercentageCompleted = "25%",
+                 DueDate = DateTime.Parse("2011-03-21"),
+                 PersonId = 1,
+                 MeetingItemId = 1
+                }
+            };
+
+            foreach (var meetingItem in meetingItems)
+            {
+                context.MeetingItems.Add(meetingItem);
+            }
+            context.SaveChanges();
+
+            var meetings = new List<Meeting>()
+            {
+                new Meeting
+                {
+                    MeetingDescription = "New Meeting one",
+                    MeetingDate = DateTime.Parse("2011-03-21 13:26"),
+                    StartTime =  DateTime.Parse("2011-03-21 13:26"),
+                    EndTime =  DateTime.Parse("2011-03-21 13:26"),
+                    Location = "Chillisoft Offices",
+                    MeetingTypeId = 1
+                    
+                },
+                new Meeting 
+                {
+                
+                    MeetingDescription = "New Meeting one",
+                    MeetingDate = DateTime.Parse("2011-03-21 13:26"),
+                    StartTime =  DateTime.Parse("2011-03-21 13:26"),
+                    EndTime =  DateTime.Parse("2011-03-21 13:26"),
+                    Location = "Chillisoft Offices",
+                    MeetingTypeId = 1
+                
+                }
+            };
+            foreach (var m in meetings)
+            {
+                context.Meetings.Add(m);
+            }
+            context.SaveChanges();
+
             var meetingItemStatus = new List<MeetingItemStatus>()
             {
                 new MeetingItemStatus
                 {
                     CurrentStatus = "On Progress",
                     ActionRequired = "Fix Bug",
-                    PersonId = 1
+                    PersonId = 1,
+                    MeetingId = 1,
+                    MeetingItemId = 1
+                    
                 },
 
                    new MeetingItemStatus
                 {
                      CurrentStatus = "On Progress",
                     ActionRequired = "Fix Bug",
-                    PersonId = 2
+                    PersonId = 2,
+                    MeetingId = 1,
+                    MeetingItemId = 1
                 },
             };
             foreach (var meetingItemStatuse in meetingItemStatus)

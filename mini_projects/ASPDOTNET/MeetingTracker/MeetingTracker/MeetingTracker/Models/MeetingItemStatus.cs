@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,7 +9,7 @@ namespace MeetingTracker.Models
         [Key]
         public int MeetingItemStatusId { get; set; }
         [ForeignKey("Person")]
-        public int PersonId { get; set; }
+        public int? PersonId { get; set; }
         [ForeignKey("Meeting")]
         public int MeetingId { get; set; }
         [ForeignKey("MeetingItem")]
@@ -20,13 +18,10 @@ namespace MeetingTracker.Models
         public string CurrentStatus { get; set; }
         [Display(Name = "Action Required")]
         public string ActionRequired { get; set; }
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date Updated")]
         public DateTime? DateUpdated { get; set; }
-       
-        
-        
-        
-        [Display(Name="Responsible Person")]
+        [Display(Name = "Responsible Person")]
         public Person Person { get; set; }
         public Meeting Meeting { get; set; }
         [Display(Name = "Meeting Item")]
