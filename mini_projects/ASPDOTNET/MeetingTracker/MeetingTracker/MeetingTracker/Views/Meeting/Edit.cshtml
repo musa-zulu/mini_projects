@@ -16,14 +16,6 @@
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.MeetingId)
-        
-        <div class="form-group">
-            @Html.LabelFor(model => model.MeetingTypeId, "Meeting Type", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MeetingTypeId", String.Empty)
-                @Html.ValidationMessageFor(model => model.MeetingTypeId)
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.MeetingDescription, new { @class = "control-label col-md-2" })
@@ -65,7 +57,13 @@
             </div>
         </div>
 
-       
+        <div class="form-group">
+            @Html.LabelFor(model => model.MeetingTypeId, "MeetingTypeId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MeetingTypeId", String.Empty)
+                @Html.ValidationMessageFor(model => model.MeetingTypeId)
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

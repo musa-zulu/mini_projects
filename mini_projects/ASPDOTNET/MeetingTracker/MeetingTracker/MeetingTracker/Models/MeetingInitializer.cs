@@ -63,14 +63,15 @@ namespace MeetingTracker.Models
             {
                 new MeetingItem
                 {
+                        // DueDate = DateTime.Now,
                     MeetingItemDescription = "Meeting Description",
-                   
-                   // DueDate = DateTime.Now,
                     Priority = "High",
                     PercentageCompleted = "15%",
                      DueDate = DateTime.Parse("2011-03-21"),
                      PersonId = 1,
-                     MeetingItemId = 1
+                     MeetingItemId = 1,
+                     Status = "Normal",
+                     StartDate = DateTime.Parse("2011-01-11")
                 },
 
                 new MeetingItem
@@ -82,8 +83,11 @@ namespace MeetingTracker.Models
                     Priority = "High",
                     PercentageCompleted = "25%",
                  DueDate = DateTime.Parse("2011-03-21"),
-                 PersonId = 1,
-                 MeetingItemId = 1
+                PersonId = 2,
+                 MeetingItemId =2, 
+                 Status = "Normal",
+                   StartDate = DateTime.Parse("2011-01-11")
+
                 }
             };
 
@@ -102,18 +106,19 @@ namespace MeetingTracker.Models
                     StartTime =  DateTime.Parse("2011-03-21 13:26"),
                     EndTime =  DateTime.Parse("2011-03-21 13:26"),
                     Location = "Chillisoft Offices",
-                    MeetingTypeId = 1
+                    MeetingTypeId = 1,
+                    MeetingId = 1,
                     
                 },
                 new Meeting 
                 {
-                
                     MeetingDescription = "New Meeting one",
                     MeetingDate = DateTime.Parse("2011-03-21 13:26"),
                     StartTime =  DateTime.Parse("2011-03-21 13:26"),
                     EndTime =  DateTime.Parse("2011-03-21 13:26"),
                     Location = "Chillisoft Offices",
-                    MeetingTypeId = 1
+                    MeetingTypeId = 2,
+                    MeetingId = 2
                 
                 }
             };
@@ -131,17 +136,21 @@ namespace MeetingTracker.Models
                     ActionRequired = "Fix Bug",
                     PersonId = 1,
                     MeetingId = 1,
-                    MeetingItemId = 1
+                    MeetingItemId = 1,
+                    DateUpdated = DateTime.Parse("2011-03-21 13:26"),
+                    MeetingItemStatusId = 1
                     
                 },
 
                    new MeetingItemStatus
                 {
-                     CurrentStatus = "On Progress",
+                    CurrentStatus = "On Progress",
                     ActionRequired = "Fix Bug",
                     PersonId = 2,
-                    MeetingId = 1,
-                    MeetingItemId = 1
+                    MeetingId = 2,
+                    MeetingItemId =2,
+                    DateUpdated = DateTime.Parse("2011-03-21 13:26"),
+                    MeetingItemStatusId = 1
                 },
             };
             foreach (var meetingItemStatuse in meetingItemStatus)

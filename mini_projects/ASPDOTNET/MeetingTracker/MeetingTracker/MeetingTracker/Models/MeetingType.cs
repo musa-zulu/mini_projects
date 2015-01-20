@@ -7,7 +7,7 @@ namespace MeetingTracker.Models
     {
         public int MeetingTypeId { get; set; }
 
-        [Display(Name = "Meeting Type Description")]
+        [Display(Name = "Meeting Type")]
         public string MeetingTypeDescription { get; set; }
 
         public ICollection<Meeting> Meetings { get; set; }

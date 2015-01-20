@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MeetingTracker.Models;
+using MeetingTracker.Context;
 
 namespace MeetingTracker.Controllers
 {
     public class MeetingItemStatusController : Controller
     {
-        private MeetingContext db = new MeetingContext();
+        private readonly MeetingContext _db = new MeetingContext();
 
         // GET: /MeetingItemStatus/
         public ActionResult Index()
         {
-            var meetingitemstatuses = db.MeetingItemStatuses.Include(m => m.Meeting).Include(m => m.MeetingItem).Include(m => m.Person);
+            var meetingitemstatuses = _db.MeetingItemStatuses.Include(m => m.Meeting).Include(m => m.MeetingItem).Include(m => m.Person);
             return View(meetingitemstatuses.ToList());
         }
 
@@ -28,7 +25,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingItemStatus meetingitemstatus = db.MeetingItemStatuses.Find(id);
+            MeetingItemStatus meetingitemstatus = _db.MeetingItemStatuses.Find(id);
             if (meetingitemstatus == null)
             {
                 return HttpNotFound();
@@ -39,9 +36,9 @@ namespace MeetingTracker.Controllers
         // GET: /MeetingItemStatus/Create
         public ActionResult Create()
         {
-            ViewBag.MeetingId = new SelectList(db.Meetings, "MeetingId", "MeetingDescription");
-            ViewBag.MeetingItemId = new SelectList(db.MeetingItems, "MeetingItemId", "MeetingItemDescription");
-            ViewBag.PersonId = new SelectList(db.Persons, "PersonId", "FirstName");
+            ViewBag.MeetingId = new SelectList(_db.Meetings, "MeetingId", "MeetingDescription");
+            ViewBag.MeetingItemId = new SelectList(_db.MeetingItems, "MeetingItemId", "MeetingItemDescription");
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName");
             return View();
         }
 
@@ -54,14 +51,14 @@ namespace MeetingTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.MeetingItemStatuses.Add(meetingitemstatus);
-                db.SaveChanges();
+                _db.MeetingItemStatuses.Add(meetingitemstatus);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MeetingId = new SelectList(db.Meetings, "MeetingId", "MeetingDescription", meetingitemstatus.MeetingId);
-            ViewBag.MeetingItemId = new SelectList(db.MeetingItems, "MeetingItemId", "MeetingItemDescription", meetingitemstatus.MeetingItemId);
-            ViewBag.PersonId = new SelectList(db.Persons, "PersonId", "FirstName", meetingitemstatus.PersonId);
+            ViewBag.MeetingId = new SelectList(_db.Meetings, "MeetingId", "MeetingDescription", meetingitemstatus.MeetingId);
+            ViewBag.MeetingItemId = new SelectList(_db.MeetingItems, "MeetingItemId", "MeetingItemDescription", meetingitemstatus.MeetingItemId);
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName", meetingitemstatus.PersonId);
             return View(meetingitemstatus);
         }
 
@@ -72,14 +69,14 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingItemStatus meetingitemstatus = db.MeetingItemStatuses.Find(id);
+            MeetingItemStatus meetingitemstatus = _db.MeetingItemStatuses.Find(id);
             if (meetingitemstatus == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MeetingId = new SelectList(db.Meetings, "MeetingId", "MeetingDescription", meetingitemstatus.MeetingId);
-            ViewBag.MeetingItemId = new SelectList(db.MeetingItems, "MeetingItemId", "MeetingItemDescription", meetingitemstatus.MeetingItemId);
-            ViewBag.PersonId = new SelectList(db.Persons, "PersonId", "FirstName", meetingitemstatus.PersonId);
+            ViewBag.MeetingId = new SelectList(_db.Meetings, "MeetingId", "MeetingDescription", meetingitemstatus.MeetingId);
+            ViewBag.MeetingItemId = new SelectList(_db.MeetingItems, "MeetingItemId", "MeetingItemDescription", meetingitemstatus.MeetingItemId);
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName", meetingitemstatus.PersonId);
             return View(meetingitemstatus);
         }
 
@@ -92,13 +89,13 @@ namespace MeetingTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(meetingitemstatus).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(meetingitemstatus).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MeetingId = new SelectList(db.Meetings, "MeetingId", "MeetingDescription", meetingitemstatus.MeetingId);
-            ViewBag.MeetingItemId = new SelectList(db.MeetingItems, "MeetingItemId", "MeetingItemDescription", meetingitemstatus.MeetingItemId);
-            ViewBag.PersonId = new SelectList(db.Persons, "PersonId", "FirstName", meetingitemstatus.PersonId);
+            ViewBag.MeetingId = new SelectList(_db.Meetings, "MeetingId", "MeetingDescription", meetingitemstatus.MeetingId);
+            ViewBag.MeetingItemId = new SelectList(_db.MeetingItems, "MeetingItemId", "MeetingItemDescription", meetingitemstatus.MeetingItemId);
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName", meetingitemstatus.PersonId);
             return View(meetingitemstatus);
         }
 
@@ -109,7 +106,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingItemStatus meetingitemstatus = db.MeetingItemStatuses.Find(id);
+            MeetingItemStatus meetingitemstatus = _db.MeetingItemStatuses.Find(id);
             if (meetingitemstatus == null)
             {
                 return HttpNotFound();
@@ -122,9 +119,9 @@ namespace MeetingTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MeetingItemStatus meetingitemstatus = db.MeetingItemStatuses.Find(id);
-            db.MeetingItemStatuses.Remove(meetingitemstatus);
-            db.SaveChanges();
+            MeetingItemStatus meetingitemstatus = _db.MeetingItemStatuses.Find(id);
+            _db.MeetingItemStatuses.Remove(meetingitemstatus);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -132,7 +129,7 @@ namespace MeetingTracker.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

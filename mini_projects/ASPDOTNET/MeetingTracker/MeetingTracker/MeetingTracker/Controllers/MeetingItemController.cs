@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MeetingTracker.Models;
+using MeetingTracker.Context;
 
 namespace MeetingTracker.Controllers
 {
     public class MeetingItemController : Controller
     {
-        private MeetingContext db = new MeetingContext();
+        private readonly MeetingContext _db = new MeetingContext();
 
         // GET: /MeetingItem/
         public ActionResult Index()
         {
-            return View(db.MeetingItems.ToList());
+            var meetingitems = _db.MeetingItems.Include(m => m.Person);
+            return View(meetingitems.ToList());
         }
 
         // GET: /MeetingItem/Details/5
@@ -27,7 +25,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingItem meetingitem = db.MeetingItems.Find(id);
+            MeetingItem meetingitem = _db.MeetingItems.Find(id);
             if (meetingitem == null)
             {
                 return HttpNotFound();
@@ -38,6 +36,7 @@ namespace MeetingTracker.Controllers
         // GET: /MeetingItem/Create
         public ActionResult Create()
         {
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName");
             return View();
         }
 
@@ -46,15 +45,16 @@ namespace MeetingTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="MeetingItemId,MeetingItemDescription,Priority,PercentageCompleted,Duration")] MeetingItem meetingitem)
+        public ActionResult Create([Bind(Include="MeetingItemId,PersonId,MeetingItemDescription,StartDate,DueDate,Priority,Status,PercentageCompleted,CompletedDate")] MeetingItem meetingitem)
         {
             if (ModelState.IsValid)
             {
-                db.MeetingItems.Add(meetingitem);
-                db.SaveChanges();
+                _db.MeetingItems.Add(meetingitem);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName", meetingitem.PersonId);
             return View(meetingitem);
         }
 
@@ -65,11 +65,12 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingItem meetingitem = db.MeetingItems.Find(id);
+            MeetingItem meetingitem = _db.MeetingItems.Find(id);
             if (meetingitem == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName", meetingitem.PersonId);
             return View(meetingitem);
         }
 
@@ -78,14 +79,15 @@ namespace MeetingTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="MeetingItemId,MeetingItemDescription,Priority,PercentageCompleted,Duration")] MeetingItem meetingitem)
+        public ActionResult Edit([Bind(Include="MeetingItemId,PersonId,MeetingItemDescription,StartDate,DueDate,Priority,Status,PercentageCompleted,CompletedDate")] MeetingItem meetingitem)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(meetingitem).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(meetingitem).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.PersonId = new SelectList(_db.Persons, "PersonId", "FirstName", meetingitem.PersonId);
             return View(meetingitem);
         }
 
@@ -96,7 +98,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingItem meetingitem = db.MeetingItems.Find(id);
+            MeetingItem meetingitem = _db.MeetingItems.Find(id);
             if (meetingitem == null)
             {
                 return HttpNotFound();
@@ -109,9 +111,9 @@ namespace MeetingTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MeetingItem meetingitem = db.MeetingItems.Find(id);
-            db.MeetingItems.Remove(meetingitem);
-            db.SaveChanges();
+            MeetingItem meetingitem = _db.MeetingItems.Find(id);
+            _db.MeetingItems.Remove(meetingitem);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -119,7 +121,7 @@ namespace MeetingTracker.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -9,6 +9,68 @@
     <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
 
+
+
+
+<button id="opener">Open Dialogbox</button>
+
+
+
+<div id="dialog-modal" title="Basics">
+    @*
+
+        @using (Ajax.BeginForm("Index",new AjaxOptions{ UpdateTargetId ="ID", OnSuccess = "onSuccess"}))  then change view to partialview insted of view
+
+
+    *@
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "Person" }))
+    {
+        <div>
+            <fieldset>
+
+                <legend>Account Information</legend>
+                <div class="editor-label">
+                    
+                </div>
+
+                <div class="editor-label">
+                  
+
+                </div>
+
+
+                <div class="editor-label">
+                   
+                </div>
+
+                <div class="editor-label">
+                   
+
+                </div>
+
+                <p>
+                    <input type="submit" value="Submit" />
+                </p>
+
+            </fieldset>
+
+
+        </div>
+    }
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>

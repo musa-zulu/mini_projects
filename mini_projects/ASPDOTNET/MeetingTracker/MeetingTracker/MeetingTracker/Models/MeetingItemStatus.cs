@@ -22,10 +22,10 @@ namespace MeetingTracker.Models
         [Display(Name = "Date Updated")]
         public DateTime? DateUpdated { get; set; }
         [Display(Name = "Responsible Person")]
-        public Person Person { get; set; }
-        public Meeting Meeting { get; set; }
+        public virtual Person Person { get; set; }
+        public virtual Meeting Meeting { get; set; }
         [Display(Name = "Meeting Item")]
-        public MeetingItem MeetingItem { get; set; }
+        public virtual MeetingItem MeetingItem { get; set; }
 
     }
 }

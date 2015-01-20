@@ -5,7 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+        @*
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/modernizr")
+
+        <script>
+            $(function () {
+                $("#dialog-modal").dialog({
+                    autoOpen: false,
+                    width: 450,
+                    height: 480,
+                    show: {
+                        effect: "blind",
+                        duration: 350
+                    },
+                    hide: {
+                        effect: "explode",
+                        duration: 1000
+                    }
+                });
+
+                $("#opener").click(function () {
+                    $("#dialog-modal").dialog("open");
+                });
+            });
+
+
+            function onSuccess() {
+                $("#dialog-modal").dialog("close");
+            }
+        </script>            
+    *@
 
 </head>
 <body>
@@ -40,7 +72,6 @@
             <p>&copy; @DateTime.Now.Year - Minute Capture MVC Application</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

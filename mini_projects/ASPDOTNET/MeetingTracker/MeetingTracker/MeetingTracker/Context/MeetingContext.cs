@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using MeetingTracker.Models;
+using MeetingTracker.ViewModels;
 
 namespace MeetingTracker.Context
 {
@@ -16,5 +17,9 @@ namespace MeetingTracker.Context
         public DbSet<Person> Persons { get; set; }
 
         public DbSet<Attendees> Attendeeses { get; set; }
+
+       
+
+       // public System.Data.Entity.DbSet<MeetingTracker.ViewModels.MeetingIndexData> MeetingIndexDatas { get; set; }
     }
 }

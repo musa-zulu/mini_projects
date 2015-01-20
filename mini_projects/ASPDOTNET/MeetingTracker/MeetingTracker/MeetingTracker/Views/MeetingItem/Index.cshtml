@@ -4,41 +4,66 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Meeting Items</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Add New Item", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="webgrid-table">
-    <tr class="webgrid-row-style">
-        <th class="webgrid-header">
+<table class="table">
+    <tr>
+        <th>
+            @* @Html.DisplayNameFor(model => model.Person.FirstName)*@ 
+            Assignee
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.MeetingItemDescription)
         </th>
-        <th class="webgrid-header">
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Priority)
         </th>
-        <th class="webgrid-header">
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PercentageCompleted)
         </th>
-        <th class="webgrid-header">
-            @Html.DisplayNameFor(model => model.Duration)
+        <th>
+            @Html.DisplayNameFor(model => model.CompletedDate)
         </th>
-        <th class="webgrid-header">Action</th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Person.FirstName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.MeetingItemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DueDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Priority)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.PercentageCompleted)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Duration)
+            @Html.DisplayFor(modelItem => item.CompletedDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MeetingItemId }) |

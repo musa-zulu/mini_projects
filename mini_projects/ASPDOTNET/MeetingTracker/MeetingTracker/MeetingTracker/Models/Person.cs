@@ -1,12 +1,11 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MeetingTracker.Models
 {
     public class Person
     {
-        [Key]
+      
         public int PersonId { get; set; }
         [Required(ErrorMessage = "Name field cannot be empty!.")]
         [MaxLength(15, ErrorMessage = "First Name cannot be more than 30 characters in length.")]

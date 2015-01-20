@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MeetingTracker.Models;
+using MeetingTracker.Context;
 
 namespace MeetingTracker.Controllers
 {
     public class MeetingController : Controller
     {
-        private MeetingContext db = new MeetingContext();
+        private readonly MeetingContext _db = new MeetingContext();
 
         // GET: /Meeting/
         public ActionResult Index()
         {
-            var meetings = db.Meetings.Include(m => m.MeetingType);
+            var meetings = _db.Meetings.Include(m => m.MeetingType);
             return View(meetings.ToList());
         }
 
@@ -28,7 +25,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Meeting meeting = db.Meetings.Find(id);
+            Meeting meeting = _db.Meetings.Find(id);
             if (meeting == null)
             {
                 return HttpNotFound();
@@ -39,7 +36,7 @@ namespace MeetingTracker.Controllers
         // GET: /Meeting/Create
         public ActionResult Create()
         {
-            ViewBag.MeetingTypeId = new SelectList(db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription");
+            ViewBag.MeetingTypeId = new SelectList(_db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription");
             return View();
         }
 
@@ -52,12 +49,12 @@ namespace MeetingTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Meetings.Add(meeting);
-                db.SaveChanges();
+                _db.Meetings.Add(meeting);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MeetingTypeId = new SelectList(db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription", meeting.MeetingTypeId);
+            ViewBag.MeetingTypeId = new SelectList(_db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription", meeting.MeetingTypeId);
             return View(meeting);
         }
 
@@ -68,12 +65,12 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Meeting meeting = db.Meetings.Find(id);
+            Meeting meeting = _db.Meetings.Find(id);
             if (meeting == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MeetingTypeId = new SelectList(db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription", meeting.MeetingTypeId);
+            ViewBag.MeetingTypeId = new SelectList(_db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription", meeting.MeetingTypeId);
             return View(meeting);
         }
 
@@ -86,11 +83,11 @@ namespace MeetingTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(meeting).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(meeting).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MeetingTypeId = new SelectList(db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription", meeting.MeetingTypeId);
+            ViewBag.MeetingTypeId = new SelectList(_db.MeetingTypes, "MeetingTypeId", "MeetingTypeDescription", meeting.MeetingTypeId);
             return View(meeting);
         }
 
@@ -101,7 +98,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Meeting meeting = db.Meetings.Find(id);
+            Meeting meeting = _db.Meetings.Find(id);
             if (meeting == null)
             {
                 return HttpNotFound();
@@ -114,9 +111,9 @@ namespace MeetingTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Meeting meeting = db.Meetings.Find(id);
-            db.Meetings.Remove(meeting);
-            db.SaveChanges();
+            Meeting meeting = _db.Meetings.Find(id);
+            _db.Meetings.Remove(meeting);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -124,7 +121,7 @@ namespace MeetingTracker.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -6,12 +6,15 @@ namespace MeetingTracker.Models
 {
     public class MeetingItem
     {
+        
         public int MeetingItemId { get; set; }
-        public int PersonId { get; set; }
+        [Display(Name="Responsible Person")]
+        public int? PersonId { get; set; }
         [Required(ErrorMessage = "Item description field cannot be empty!.")]
         [MaxLength(50, ErrorMessage = "Item description cannot be more than 50 characters in length.")]
         [Display(Name = "Item Description")]
         public string MeetingItemDescription { get; set; }
+       
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Date")]
         public DateTime? StartDate { get; set; }

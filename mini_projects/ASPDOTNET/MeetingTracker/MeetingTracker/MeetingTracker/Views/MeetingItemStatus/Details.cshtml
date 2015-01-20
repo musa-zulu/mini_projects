@@ -11,6 +11,31 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Meeting.MeetingDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meeting.MeetingDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingItem.MeetingItemDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingItem.MeetingItemDescription)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Person.FirstName)*@
+            Assignee
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FirstName)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.CurrentStatus)
         </dt>
 

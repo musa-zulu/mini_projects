@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MeetingTracker.Models;
+using MeetingTracker.Context;
 
 namespace MeetingTracker.Controllers
 {
     public class PersonController : Controller
     {
-        private MeetingContext db = new MeetingContext();
+        private readonly MeetingContext _db = new MeetingContext();
 
         // GET: /Person/
         public ActionResult Index()
         {
-            return View(db.Persons.ToList());
+            return View(_db.Persons.ToList());
         }
 
         // GET: /Person/Details/5
@@ -27,7 +24,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
+            Person person = _db.Persons.Find(id);
             if (person == null)
             {
                 return HttpNotFound();
@@ -50,8 +47,8 @@ namespace MeetingTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Persons.Add(person);
-                db.SaveChanges();
+                _db.Persons.Add(person);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +62,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
+            Person person = _db.Persons.Find(id);
             if (person == null)
             {
                 return HttpNotFound();
@@ -82,8 +79,8 @@ namespace MeetingTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(person).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(person).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(person);
@@ -96,7 +93,7 @@ namespace MeetingTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
+            Person person = _db.Persons.Find(id);
             if (person == null)
             {
                 return HttpNotFound();
@@ -109,9 +106,9 @@ namespace MeetingTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Person person = db.Persons.Find(id);
-            db.Persons.Remove(person);
-            db.SaveChanges();
+            Person person = _db.Persons.Find(id);
+            _db.Persons.Remove(person);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -119,7 +116,7 @@ namespace MeetingTracker.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }
