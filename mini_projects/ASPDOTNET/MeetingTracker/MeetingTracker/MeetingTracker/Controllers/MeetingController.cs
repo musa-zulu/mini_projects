@@ -18,6 +18,7 @@ namespace MeetingTracker.Controllers
             return View(meetings.ToList());
         }
 
+  
         // GET: /Meeting/Details/5
         public ActionResult Details(int? id)
         {
@@ -31,6 +32,22 @@ namespace MeetingTracker.Controllers
                 return HttpNotFound();
             }
             return View(meeting);
+        }
+
+
+        public ActionResult Minutes(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MeetingItemStatus meetingitemstatus = _db.MeetingItemStatuses.Find(id);
+            if (meetingitemstatus == null)
+            {
+                return HttpNotFound();
+            }
+            return View(meetingitemstatus);
         }
 
         // GET: /Meeting/Create

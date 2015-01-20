@@ -1,0 +1,68 @@
+﻿@model MeetingTracker.Models.MeetingItemStatus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Current Meeting Item Status</h2>
+
+
+<div>
+    <h4>Meeting Item NO : @Html.DisplayFor(model => model.MeetingItem.MeetingItemId)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Meeting.MeetingDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meeting.MeetingDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingItem.MeetingItemDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingItem.MeetingItemDescription)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Person.FirstName)*@
+            Assignee
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActionRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActionRequired)
+        </dd>
+
+        <dt>
+            Last Date Updated
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateUpdated)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MeetingItemStatusId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

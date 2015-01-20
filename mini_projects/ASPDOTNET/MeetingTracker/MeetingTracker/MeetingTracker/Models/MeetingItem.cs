@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MeetingTracker.Models
 {
-    public class MeetingItem
+    public class MeetingItem : IEnumerable
     {
         
         public int MeetingItemId { get; set; }
@@ -38,5 +39,9 @@ namespace MeetingTracker.Models
         public ICollection<MeetingItemStatus> MeetingItemStatuses { get; set; }
 
 
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

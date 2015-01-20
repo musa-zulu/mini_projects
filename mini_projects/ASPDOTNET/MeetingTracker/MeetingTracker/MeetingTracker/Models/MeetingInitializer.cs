@@ -64,7 +64,7 @@ namespace MeetingTracker.Models
                 new MeetingItem
                 {
                         // DueDate = DateTime.Now,
-                    MeetingItemDescription = "Meeting Description",
+                    MeetingItemDescription = "Meeting Item Description one",
                     Priority = "High",
                     PercentageCompleted = "15%",
                      DueDate = DateTime.Parse("2011-03-21"),
@@ -76,17 +76,17 @@ namespace MeetingTracker.Models
 
                 new MeetingItem
                 {
-                    MeetingItemDescription = "Meeting Description one",
+                    MeetingItemDescription = "Meeting Item Description two",
                    // StartDate = DateTime.Now,
                    // DueDate = DateTime.Now,
                    
                     Priority = "High",
                     PercentageCompleted = "25%",
-                 DueDate = DateTime.Parse("2011-03-21"),
+                 DueDate = DateTime.Parse("2012-03-2"),
                 PersonId = 2,
                  MeetingItemId =2, 
                  Status = "Normal",
-                   StartDate = DateTime.Parse("2011-01-11")
+                   StartDate = DateTime.Parse("2012-01-1")
 
                 }
             };
@@ -112,12 +112,12 @@ namespace MeetingTracker.Models
                 },
                 new Meeting 
                 {
-                    MeetingDescription = "New Meeting one",
+                    MeetingDescription = "New Meeting Two",
                     MeetingDate = DateTime.Parse("2011-03-21 13:26"),
                     StartTime =  DateTime.Parse("2011-03-21 13:26"),
                     EndTime =  DateTime.Parse("2011-03-21 13:26"),
                     Location = "Chillisoft Offices",
-                    MeetingTypeId = 2,
+                    MeetingTypeId = 3,
                     MeetingId = 2
                 
                 }
@@ -148,7 +148,7 @@ namespace MeetingTracker.Models
                     ActionRequired = "Fix Bug",
                     PersonId = 2,
                     MeetingId = 2,
-                    MeetingItemId =2,
+                    MeetingItemId =1,
                     DateUpdated = DateTime.Parse("2011-03-21 13:26"),
                     MeetingItemStatusId = 1
                 },

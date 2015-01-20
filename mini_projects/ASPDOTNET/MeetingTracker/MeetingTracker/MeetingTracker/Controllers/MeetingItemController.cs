@@ -18,6 +18,23 @@ namespace MeetingTracker.Controllers
             return View(meetingitems.ToList());
         }
 
+        public ActionResult CurrentStatus(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MeetingItemStatus meetingitem = _db.MeetingItemStatuses.Find(id) ;
+            if (meetingitem == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(meetingitem);
+        }
+
+
         // GET: /MeetingItem/Details/5
         public ActionResult Details(int? id)
         {
