@@ -12,13 +12,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>MeetingItem</h4>
+        <h4>Meeting Item</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.MeetingItemId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PersonId, "PersonId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PersonId, "Assign To", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("PersonId", String.Empty)
                 @Html.ValidationMessageFor(model => model.PersonId)
